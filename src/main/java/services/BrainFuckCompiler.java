@@ -47,7 +47,18 @@ public class BrainFuckCompiler {
         List<Command> commands = this.getCommands(code);
         List<Command> optimizedCommands = new LinkedList<Command>();
         if(commands.isEmpty()) return optimizedCommands;
+        boolean firstIterationFlag = true;
 
+        for (Command currentCommand: commands){
+            if (firstIterationFlag){
+                optimizedCommands.add(currentCommand);
+                firstIterationFlag = false;
+            }
+            Command lastOptimizedCommand = optimizedCommands.remove(optimizedCommands.size() - 1);
+            if (currentCommand.getIdCommand() == lastOptimizedCommand.getIdCommand()){
+
+            }
+        }
 
 
         return optimizedCommands;

@@ -13,6 +13,8 @@ public abstract class Command {
         this.numberOfIteration = numberOfIteration;
     }
 
+    public abstract int getIdCommand();
     public abstract void execute(BrainFuckData data, BrainFuckCode code);
+
 
 }
