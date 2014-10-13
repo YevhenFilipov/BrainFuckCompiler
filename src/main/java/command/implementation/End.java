@@ -8,7 +8,7 @@ import services.BrainFuckServices;
 /**
  *
  */
-public class End implements Command {
+public class End extends Command {
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
 

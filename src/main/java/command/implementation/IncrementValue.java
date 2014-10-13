@@ -7,7 +7,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class IncrementValue implements Command  {
+public class IncrementValue extends Command  {
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
 

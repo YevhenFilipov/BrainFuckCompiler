@@ -8,7 +8,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class ShiftRight implements Command{
+public class ShiftRight extends Command{
 
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {

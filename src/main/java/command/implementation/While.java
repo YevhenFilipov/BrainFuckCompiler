@@ -9,7 +9,7 @@ import services.BrainFuckServices;
 /**
  *
  */
-public class While implements Command {
+public class While extends Command {
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
         if (data.getCurrentCharFromArray() == 0) {

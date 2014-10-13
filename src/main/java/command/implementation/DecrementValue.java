@@ -7,7 +7,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class DecrementValue implements Command {
+public class DecrementValue extends Command {
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
         char currentCharInArray = data.getCurrentCharFromArray();

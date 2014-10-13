@@ -7,7 +7,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class PrintToConsole implements Command{
+public class PrintToConsole extends Command{
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
 

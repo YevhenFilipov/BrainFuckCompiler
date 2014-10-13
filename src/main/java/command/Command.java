@@ -6,8 +6,13 @@ import entity.BrainFuckData;
 /**
  *
  */
-public interface Command {
+public abstract class Command {
+    private int numberOfIteration = 1;
 
-    public void execute(BrainFuckData data, BrainFuckCode code);
+    public void setNumberOfIteration(int numberOfIteration) {
+        this.numberOfIteration = numberOfIteration;
+    }
+
+    public abstract void execute(BrainFuckData data, BrainFuckCode code);
 
 }

@@ -49,6 +49,7 @@ public class BrainFuckCompiler {
         if(commands.isEmpty()) return optimizedCommands;
 
 
+
         return optimizedCommands;
     }
 
