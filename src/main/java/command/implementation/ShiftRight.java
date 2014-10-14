@@ -22,10 +22,9 @@ public class ShiftRight extends Command{
     public void execute(BrainFuckData data, BrainFuckCode code) {
 
         int currentIndexInArray = data.getCurrentIndexInArray();
-        currentIndexInArray++;
+        currentIndexInArray += this.getNumberOfIteration();
         data.setCurrentIndexInArray(currentIndexInArray);
 
-        int currentPositionInCode = code.getCurrentPosition() + 1;
-        code.setCurrentPosition(currentPositionInCode);
+        code.changeCurrentPositionOn(1);
     }
 }

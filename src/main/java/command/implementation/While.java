@@ -23,12 +23,9 @@ public class While extends Command {
     public void execute(BrainFuckData data, BrainFuckCode code) {
         if (data.getCurrentCharFromArray() == 0) {
             BrainFuckServices services = new BrainFuckServices();
-            int currentPositionInCode = code.getCurrentPosition();
-            currentPositionInCode += services.getLoopLength(code, true);
-            code.setCurrentPosition(currentPositionInCode);
+            code.changeCurrentPositionOn(services.getLoopLength(code, true));
         } else {
-            int currentPositionInCode = code.getCurrentPosition() + 1;
-            code.setCurrentPosition(currentPositionInCode);
+            code.changeCurrentPositionOn(1);
         }
     }
 }

@@ -22,7 +22,6 @@ public class PrintToConsole extends Command{
 
         System.out.print(data.getCurrentCharFromArray());
 
-        int currentPositionInCode = code.getCurrentPosition() + 1;
-        code.setCurrentPosition(currentPositionInCode);
+        code.changeCurrentPositionOn(1);
     }
 }

@@ -21,10 +21,9 @@ public class IncrementValue extends Command  {
     public void execute(BrainFuckData data, BrainFuckCode code) {
 
         char currentCharInArray = data.getCurrentCharFromArray();
-        currentCharInArray++;
+        currentCharInArray += this.getNumberOfIteration();
         data.setCurrentCharToArray(currentCharInArray);
 
-        int currentPositionInCode = code.getCurrentPosition() + 1;
-        code.setCurrentPosition(currentPositionInCode);
+        code.changeCurrentPositionOn(1);
     }
 }

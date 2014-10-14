@@ -1,17 +1,21 @@
 package entity;
 
+import command.Command;
+
+import java.util.List;
+
 /**
  */
 public class BrainFuckCode {
-    private final String code;
+    private final List<Command> code;
     private int currentPosition;
 
-    public BrainFuckCode(String code){
+    public BrainFuckCode(List<Command> code){
         this.code = code;
         this.currentPosition = 0;
     }
 
-    public String getCode() {
+    public List<Command> getCode() {
         return code;
     }
 
@@ -19,8 +23,8 @@ public class BrainFuckCode {
         return currentPosition;
     }
 
-    public void setCurrentPosition(int currentPosition) {
-        this.currentPosition = currentPosition;
+    public void changeCurrentPositionOn(int deltaCurrentPosition) {
+        this.currentPosition += deltaCurrentPosition;
     }
 
     @Override
@@ -31,14 +35,14 @@ public class BrainFuckCode {
         BrainFuckCode that = (BrainFuckCode) o;
 
         if (currentPosition != that.currentPosition) return false;
-        if (!code.equals(that.code)) return false;
+        if (code != null ? !code.equals(that.code) : that.code != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = code.hashCode();
+        int result = code != null ? code.hashCode() : 0;
         result = 31 * result + currentPosition;
         return result;
     }

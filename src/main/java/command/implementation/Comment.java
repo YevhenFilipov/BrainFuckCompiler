@@ -18,7 +18,6 @@ public class Comment extends Command {
 
     @Override
     public void execute(BrainFuckData data, BrainFuckCode code) {
-        int currentPositionInCode = code.getCurrentPosition() + 1;
-        code.setCurrentPosition(currentPositionInCode);
+        code.changeCurrentPositionOn(1);
     }
 }

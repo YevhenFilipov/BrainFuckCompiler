@@ -22,13 +22,10 @@ public class End extends Command {
     public void execute(BrainFuckData data, BrainFuckCode code) {
 
         if (data.getCurrentCharFromArray() == 0) {
-            int currentPositionInCode = code.getCurrentPosition() + 1;
-            code.setCurrentPosition(currentPositionInCode);
+            code.changeCurrentPositionOn(1);
         } else {
             BrainFuckServices services = new BrainFuckServices();
-            int currentPositionInCode = code.getCurrentPosition();
-            currentPositionInCode -= services.getLoopLength(code, false);
-            code.setCurrentPosition(currentPositionInCode);
+            code.changeCurrentPositionOn(-services.getLoopLength(code, false));
         }
     }
 }

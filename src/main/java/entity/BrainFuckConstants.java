@@ -21,15 +21,6 @@ public class BrainFuckConstants {
     public static final int ID_WHILE = 6;
     public static final int ID_END = 7;
 
-    public static final boolean OPTIMIZABLE_COMMENT = true;
-    public static final boolean OPTIMIZABLE_SHIFT_RIGHT = true;
-    public static final boolean OPTIMIZABLE_SHIFT_LEFT = true;
-    public static final boolean OPTIMIZABLE_INCREMENT_VALUE = true;
-    public static final boolean OPTIMIZABLE_DECREMENT_VALUE = true;
-    public static final boolean OPTIMIZABLE_PRINT_TO_CONSOLE = false;
-    public static final boolean OPTIMIZABLE_WHILE = false;
-    public static final boolean OPTIMIZABLE_END = false;
-
     public static final String BAD_BRAIN_FUCK_CODE = "There are a non-closed loop block";
 
 }
