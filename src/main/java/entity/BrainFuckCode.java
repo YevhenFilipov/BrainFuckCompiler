@@ -10,7 +10,7 @@ public class BrainFuckCode {
     private final List<Command> code;
     private int currentPosition;
 
-    public BrainFuckCode(List<Command> code){
+    public BrainFuckCode(List<Command> code) {
         this.code = code;
         this.currentPosition = 0;
     }

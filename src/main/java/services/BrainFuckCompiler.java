@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class BrainFuckCompiler {
 
-    public boolean checkLexisOfThisCode(String code) throws SyntaxErrorBrainFuckCodeException{
+    public boolean checkLexisOfThisCode(String code) throws SyntaxErrorBrainFuckCodeException {
         int numOfBlocks = 0;
         for (int i = 0; i < code.length(); i++) {
             char curChar = code.charAt(i);
@@ -34,7 +34,7 @@ public class BrainFuckCompiler {
 
     public List<Command> getCommands(String code) throws SyntaxErrorBrainFuckCodeException {
         List<Command> commandsList = new LinkedList<Command>();
-        if(!this.checkLexisOfThisCode(code)) return commandsList;
+        if (!this.checkLexisOfThisCode(code)) return commandsList;
         for (int i = 0; i < code.length(); i++) {
             CommandFactory factory = new CommandFactory();
             char currentCharInCode = code.charAt(i);
@@ -48,42 +48,40 @@ public class BrainFuckCompiler {
         List<Command> commands = this.getCommands(code);
         List<Command> optimizedCommands = new LinkedList<Command>();
 
-        if(commands.isEmpty()) return null;
+        if (commands.isEmpty()) return null;
 
         boolean firstIterationFlag = true;
-
-        for (Command currentCommand: commands){
-            if(currentCommand.getIdCommand() == BrainFuckConstants.ID_COMMENT) continue;
-            if (firstIterationFlag){
+        for (Command currentCommand : commands) {
+            if (currentCommand.getIdCommand() == BrainFuckConstants.ID_COMMENT) continue;
+            if (firstIterationFlag) {
                 optimizedCommands.add(currentCommand);
                 firstIterationFlag = false;
                 continue;
             }
             Command lastOptimizedCommand = optimizedCommands.get(optimizedCommands.size() - 1);
-            switch (currentCommand.getIdCommand()){
+            switch (currentCommand.getIdCommand()) {
                 case BrainFuckConstants.ID_WHILE:
                 case BrainFuckConstants.ID_END:
-                case BrainFuckConstants.ID_PRINT_TO_CONSOLE: optimizedCommands.add(currentCommand);
+                case BrainFuckConstants.ID_PRINT_TO_CONSOLE:
+                    optimizedCommands.add(currentCommand);
                     break;
                 case BrainFuckConstants.ID_SHIFT_RIGHT:
                 case BrainFuckConstants.ID_SHIFT_LEFT:
                 case BrainFuckConstants.ID_INCREMENT_VALUE:
-                case BrainFuckConstants.ID_DECREMENT_VALUE:{
-                    if (currentCommand.getIdCommand() == lastOptimizedCommand.getIdCommand()){
+                case BrainFuckConstants.ID_DECREMENT_VALUE: {
+                    if (currentCommand.getIdCommand() == lastOptimizedCommand.getIdCommand()) {
                         lastOptimizedCommand.incrementNumberOfIteration();
-                    }else optimizedCommands.add(currentCommand);
+                    } else optimizedCommands.add(currentCommand);
                 }
-                    break;
-                default: continue;
+                break;
             }
         }
-        BrainFuckCode optimizedCode = new BrainFuckCode(optimizedCommands);
-        return optimizedCode;
+        return new BrainFuckCode(optimizedCommands);
     }
 
-    public void execute (BrainFuckData data, String code) throws SyntaxErrorBrainFuckCodeException {
+    public void execute(BrainFuckData data, String code) throws SyntaxErrorBrainFuckCodeException {
         BrainFuckCode commands = this.optimizeCommands(code);
-        while (commands.getCurrentPosition() < commands.getCode().size()){
+        while (commands.getCurrentPosition() < commands.getCode().size()) {
             int indexOfCurrentCommand = commands.getCurrentPosition();
             Command currentCommand = commands.getCode().get(indexOfCurrentCommand);
 

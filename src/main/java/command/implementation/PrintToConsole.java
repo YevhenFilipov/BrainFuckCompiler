@@ -8,7 +8,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class PrintToConsole extends Command{
+public class PrintToConsole extends Command {
 
     private final int idCommand = BrainFuckConstants.ID_PRINT_TO_CONSOLE;
 

@@ -8,7 +8,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class IncrementValue extends Command  {
+public class IncrementValue extends Command {
 
     private final int idCommand = BrainFuckConstants.ID_INCREMENT_VALUE;
 

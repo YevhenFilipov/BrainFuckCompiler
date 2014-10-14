@@ -18,6 +18,7 @@ public abstract class Command {
     }
 
     public abstract int getIdCommand();
+
     public abstract void execute(BrainFuckData data, BrainFuckCode code);
 
 

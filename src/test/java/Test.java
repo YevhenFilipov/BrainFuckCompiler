@@ -5,9 +5,9 @@ import services.BrainFuckCompiler;
 /**
  */
 public class Test {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        final String helloWorld =  "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++\n" +
+        final String helloWorld = "++++++++++[>+++++++>++++++++++>+++>+<<<<-]>++\n" +
                 " .>+.+++++++..+++.>++.<<+++++++++++++++.>.+++.\n" +
                 " ------.--------.>+.>.";
 
@@ -15,7 +15,7 @@ public class Test {
         BrainFuckCompiler compiler = new BrainFuckCompiler();
         try {
             compiler.execute(data, helloWorld);
-        }catch (SyntaxErrorBrainFuckCodeException e){
+        } catch (SyntaxErrorBrainFuckCodeException e) {
             e.printStackTrace();
         }
     }

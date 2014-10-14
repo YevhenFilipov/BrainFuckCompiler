@@ -8,7 +8,7 @@ import entity.BrainFuckData;
 /**
  *
  */
-public class ShiftLeft extends Command{
+public class ShiftLeft extends Command {
 
     private final int idCommand = BrainFuckConstants.ID_SHIFT_LEFT;
 
